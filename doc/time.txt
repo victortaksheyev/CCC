@@ -6,4 +6,4 @@
 // Mikian: Start         - 12/14/2018 1:45PM
 // Mikian: End           - 12/14/2018 3:45PM
 // Mikian: Comment       - Finished the base example page and continued to condense the CSS/JS
-// Mikian: GitHub Commit -
+// Mikian: GitHub Commit - e964734
