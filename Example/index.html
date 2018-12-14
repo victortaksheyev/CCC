@@ -1,0 +1,1330 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head id="php">
+    <title>PHP Basics</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.2/p5.js"></script>
+    <script type="text/javascript" src="../../js/buildTOC.js"></script>
+    <script type="text/javascript" src="../../js/toc.js"></script>
+    <script type="text/javascript" src="../../js/progressbar.js"></script>
+    <script type="text/javascript" src="../../js/question.js"></script>
+    <script type="text/javascript" src="../../js/scrolling.js"></script>
+    <script type="text/javascript" src="../../js/smoothscroll.js"></script>
+    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?lang=css"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="../../css/prettyPrint.css">
+    <link rel="stylesheet" href="../../css/styles.css">
+  </head>
+
+<body class="sideNavVisible">
+
+  <div class="fixedHeaderContainer">
+    <div class="wrapper">
+      <a href="https://portal.mycodecentral.com/my/" target="_self"><img src="../logo.png" alt="Code Central"></a>
+    </div>
+  </div>
+
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+
+      <div class="container docsNavContainer">
+        <nav class="toc">
+          <div class="toggleNav">
+            <section class="navWrapper wrapper">
+              <div class="navGroups">
+                <div class="navGroup">
+                  <a href="#top">
+                    <h3 class="navGroupCategoryTitle">WD 3</h3>
+                  </a>
+                  <ul id="toc">
+                    <progress id="pb" value="0" max="100"></progress>
+                    <div id="tocDynamic"></div>
+                  </ul>
+                </div>
+              </div>
+            </section>
+          </div>
+        </nav>
+      </div>
+
+      <div class="container mainContainer" id="top">
+        <div class="wrapper">
+          <div class="post">
+
+            <header class="postHeader">
+              <!-- <a class="edit-page-link button" href="https://www.GitHub.com/mm909" rel="noreferrer noopener">GitHub</a> -->
+              <h1 class="postHeaderTitle">PHP Basics</h1>
+            </header>
+
+            <article id="mainContent">
+              <p>
+                You’ve gone far young padawan in your web development journey. Today, we are going to
+                delve into a very important language in websites. PHP is a powerful tool in web development,
+                and in this project we are going to make a basic validation form. There is going to be a bit of
+                setup, so be prepared!
+              </p>
+
+              <div class="finalResultWapper">
+                <img src="images/final.PNG" alt="">
+              </div>
+                <section id="section_LG">
+                  <a id="_LG"><h1><codeG>Learning Goals</codeG></h1></a>
+
+                  <ol>
+                    <li>Introducing PHP</li>
+                    <ol>
+                      <li>How it is different than Javascript</li>
+                    </ol>
+                    <li>How you run PHP code</li>
+                    <ol>
+                      <li>Introducing XAMPP!</li>
+                    </ol>
+                    <li>"Echo" to add text to your site</li>
+                    <li>Variables in PHP</li>
+                    <ol>
+                      <li>Local</li>
+                      <li>$_SERVER</li>
+                      <li>Forms ($_POST VS. $_GET)</li>
+                    </ol>
+                    <li>Regular Expressions</li>
+                    <ol>
+                      <li>Pattern Matching</li>
+                    </ol>
+                    <li>Form Validator Project</li>
+                    <ol>
+                      <li>Tying it all together!</li>
+                    </ol>
+                  </ol>
+                </section>
+
+                <section id="section_PHPHTP">
+                  <a id="_PHPHTP"><h1><codeG>PHP: Hypertext Processor</codeG></h1></a>
+                  <p>
+                    In the world of web development, there are two devices to think about: The client (the computer
+                    you are using now) and the server (the computer that holds your website).
+                  </p>
+                  <p>
+                    When you learned javascript, you were running code on the client side. This means that your
+                    code is running on your computer.
+                  </p>
+                  <p>
+                    Now you are about to learn PHP, and this code can only be running on a server.
+                  </p>
+                  <p>
+                    PHP has its own tag "<code class="prettifyPHP">&lt;?php ?></code>​" and uses some of the same rules as javascript (with a few major
+                    differences).
+                  </p>
+                  <p>
+                    The project that we will be making in this sheet is just the basics of PHP without too much of
+                    what makes PHP unique, you will see more advanced PHP in the next web development sheet.
+                  </p>
+                </section>
+
+                <section id="section_HTRPHP">
+                  <a id="_HTRPHP"><h1><codeG>How To Run PHP Code</codeG></h1></a>
+                  <p>
+                    When you put in PHP into your website, every web page must now use ".php" as the new file
+                    extension (including index). Another thing that you will need is a server to run your code
+                  </p>
+
+                  <a id="0INTROXAMPP"><h2> <code class="prettifyPHP">Introducing XAMPP</code></h2></a>
+                  <div class="xamppImage">
+                    <img src="images/xamppImage.PNG" alt=""></img>
+                  </div>
+                  <p>XAMPP is a program that turns your computer into a local server to allow you to run your php
+                    code. It also allows you to create SQL databases (you will learn more about that in the next PHP
+                    worksheet).
+                  </p>
+
+                  <a id="0SETTINGUPXAMPP"><h2> <code class="prettifyPHP">Setting up XAMPP</code></h2></a>
+                  <div class="paraSection paraCenter">
+                    <div class="para">
+                      <div class="fl">
+                        <p>
+                          Open up windows and type "XAMPP" and
+                          select "XAMPP Control Panel"
+                        </p>
+                      </div>
+                      <div class="fr">
+                        <div class="tutImageContainer">
+                          <img src="images/startXampp.PNG" alt=""></img>
+                        </div>
+                      </div>
+                    </div>
+                    <br>
+                    <div class="para">
+                      <p>
+                        You don’t need to do much in here, just click
+                        on the "Start" button next to "Apache".
+                      </p>
+                      <div class="tutImageContainer">
+                        <img src="images/openXampp.PNG" alt=""></img>
+                      </div>
+                    </div>
+                    <div class="para">
+                      <p>
+                        Now your server is running and you are ready
+                        to do some PHP coding!
+                      </p>
+                      <div class="tutImageContainer">
+                        <img src="images/startServerXampp.PNG" alt=""></img>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+
+                <section id="section_ECHO">
+                  <a id="_ECHO"><h1><codeG>"Echo"</codeG></h1></a>
+                  <p>
+                    In order to run PHP code in XAMPP, you have to create your project folder in a very specific
+                    location.
+                  </p>
+
+                  <div class="paraSection paraCenter">
+                    <div class="para">
+                      <div class="fl">
+                        <p>
+                          This is the folder you must make friends with.
+                          Your project folder has to be in here.
+                        </p>
+                      </div>
+                      <div class="fr">
+                        <div class="tutImageContainer">
+                          <img src="images/filepath.PNG" alt=""></img>
+                        </div>
+                      </div>
+                    </div>
+                    <br>
+                    <div class="para">
+                      <div class="fl">
+                        <p>
+                          Add a new project folder and create a new
+                          index file (remember that the extension is
+                          now .php).
+                        </p>
+                      </div>
+                      <div class="fr">
+                        <div class="tutImageContainer">
+                          <img src="images/startFile.PNG" alt=""></img>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <br>
+                  <nav>
+                    <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                      <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#-php0" role="tab" aria-controls="nav-home" aria-selected="true"><code class="prettifyPHP codetab">index.php</code></a>
+                      <a class="nav-item nav-link" data-toggle="tab" href="#-result0" role="tab" aria-controls="nav-contact" aria-selected="false"><code class="prettifyResult codetab" id="alertTab" >Result</code></a>
+                    </div>
+                  </nav>
+                  <br>
+                  <div class="tab-content" id="nav-tabContent">
+                    <div class="tab-pane fade show active" id="-php0" role="tabpanel" aria-labelledby="nav-home-tab">
+                      <div class='CodeBoxL'>
+                        <pre class="prettyprint linenums lang-php CodeBoxBuffer">
+&lt;?php
+  echo "Hello, World!";
+?>
+</pre>
+                      </div>
+                    </div>
+                    <div class="tab-pane fade" id="-result0" role="tabpanel" aria-labelledby="nav-contact-tab">
+                      <div class="resultBox">
+                        <p style="margin:0px">Hello, World!</p>
+                      </div>
+                    </div>
+                  </div>
+                  <p>
+                    You’ve written your first PHP code!
+                  </p>
+                  <p>
+                    In order to test your code, you have to type in "<strong>localhost/yourProjectFolder/index.php</strong>" on
+                    your browser. You can’t just double click the file (if you do, you’ll just see the PHP code).
+                  </p>
+                  <p>
+                    "echo" is the main way to output anything in PHP. (You can even output HTML elements
+                    inside "echo", you’ll see that later).
+                  </p>
+                </section>
+
+                <section id="section_VARS">
+                  <a id="_VARS"><h1><codeG>Variables in PHP</codeG></h1></a>
+                  <p>
+                    You should already know plenty about variables, to start let’s start with local variables.
+                  </p>
+
+                  <a id="0LOCALVARIABLES"><h2><code class="prettifyPHP">Local variables</code></h2></a>
+                  <p>
+                    Local variables are what you generally think of when you think "variables."
+                  </p>
+                  <nav>
+                    <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                      <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#-php1" role="tab" aria-controls="nav-home" aria-selected="true"><code class="prettifyPHP codetab">index.php</code></a>
+                      <a class="nav-item nav-link" data-toggle="tab" href="#-result1" role="tab" aria-controls="nav-contact" aria-selected="false"><code class="prettifyResult codetab" id="alertTab" >Result</code></a>
+                    </div>
+                  </nav>
+                  <br>
+                  <div class="tab-content" id="nav-tabContent">
+                    <div class="tab-pane fade show active" id="-php1" role="tabpanel" aria-labelledby="nav-home-tab">
+                      <div class='CodeBoxL'>
+                        <pre class="prettyprint linenums lang-php CodeBoxBuffer">
+&lt;?php
+  $num1 = 5;
+  $num2 = 7;
+
+  $result = $num1 + $num2;
+
+  echo &lt;h1>Addtion with variables&lt;/h1>";
+  echo "Your numbers add to " . $result;
+?>
+</pre>
+                      </div>
+                    </div>
+                    <div class="tab-pane fade" id="-result1" role="tabpanel" aria-labelledby="nav-contact-tab">
+                      <div class="resultBox">
+                        <h1>Addtion with variables</h1>
+                        Your numbers add to 12
+                      </div>
+                    </div>
+                  </div>
+                  <p>
+                    Here you can also see that you can echo tags like <code class="prettifyHTML">&lt;h1>&lt;/h1></code>.
+                  </p>
+                  <p>
+                    In order to add variables to your "echo", you separate them with a period (.)
+                  </p>
+
+                  <a id="0SERVERVARIABLES"><h2><code class="prettifyPHP">Server variables</code></h2></a>
+                  <p>
+                    This is part of the power of what makes PHP standout in web development. Think of the server
+                    variable as a container with all of the information about the computer holding your site (in this
+                    case, XAMPP)
+                  </p>
+                  <nav>
+                    <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                      <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#-php2" role="tab" aria-controls="nav-home" aria-selected="true"><code class="prettifyPHP codetab">index.php</code></a>
+                      <a class="nav-item nav-link" data-toggle="tab" href="#-result2" role="tab" aria-controls="nav-contact" aria-selected="false"><code class="prettifyResult codetab" id="alertTab" >Result</code></a>
+                    </div>
+                  </nav>
+                  <br>
+                  <div class="tab-content" id="nav-tabContent">
+                    <div class="tab-pane fade show active" id="-php2" role="tabpanel" aria-labelledby="nav-home-tab">
+                      <div class='CodeBoxL'>
+                        <pre class="prettyprint linenums lang-php CodeBoxBuffer">
+&lt;?php
+  echo "&lt;h1>Server variable&lt;/h1>";
+  echo "I am running on server" . $_SERVER['SERVER_NAME'];
+?>
+</pre>
+                      </div>
+                    </div>
+                    <div class="tab-pane fade" id="-result2" role="tabpanel" aria-labelledby="nav-contact-tab">
+                      <div class="resultBox">
+                        <h1>Server variable</h1>
+                        I am running on server: localhost
+                      </div>
+                    </div>
+                  </div>
+                  <p>
+                    <code class="prettifyPHP">$_SERVER['SERVER_NAME']</code> Returns the server that your code is running on (localhost is
+                    because you’re running on the local server on your own computer).
+                  </p>
+                  <p>
+                    To access other server variables, just replace <code class="prettifyPHP">"SERVER_NAME"</code> with whatever you need.
+                  </p>
+                  <p><a href="http://php.net/manual/en/reserved.variables.server.php"><u>This</u></a> is a good list of server variables.</p>
+
+                  <a id="0HTMLFORMS"><h2><code class="prettifyPHP">HTML Forms (GET VS POST)</code></h2></a>
+                  <p>
+                    PHP has a very important role of passing information from the user up to the server for
+                    processing. Of the many ways that the information is passed, the two most popular are GET and
+                    POST.
+                  </p>
+                  <nav>
+                    <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                      <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#-php3" role="tab" aria-controls="nav-home" aria-selected="true"><code class="prettifyPHP codetab">index.php</code></a>
+                    </div>
+                  </nav>
+                  <br>
+                  <div class="tab-content" id="nav-tabContent">
+                    <div class="tab-pane fade show active" id="-php3" role="tabpanel" aria-labelledby="nav-home-tab">
+                      <div class='CodeBoxL'>
+                        <pre class="prettyprint linenums lang-php CodeBoxBuffer">
+&lt;!DOCTYPE html>
+&lt;html>
+  &lt;body>
+    &lt;h1>Form Example&lt;/h1>
+    &lt;form  method="get" action="&lt;?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+      Enter Something: &lt;input type="text" name="test">
+      &lt;input type="submit" name="submit" value="Click Me">
+    &lt;/form>
+  &lt;/body>
+&lt;/html>
+</pre>
+                      </div>
+                    </div>
+                  </div>
+                  <div style="text-align:center">
+                    <img class="finalResultWapper" src="images/getandpost.PNG" alt=""></img>
+                  </div>
+                  <br>
+                  <p>
+                    Notice the method that the form's "method" is "get".
+                  </p>
+                  <p>
+                    Also notice the URL on the left, that is the response from inputting data through the GET
+                    method. The data is cached and displayed on the browser, this makes GET request book
+                    markable (like bookmarking Google search results).
+                  </p>
+                  <nav>
+                    <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                      <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#-php3" role="tab" aria-controls="nav-home" aria-selected="true"><code class="prettifyPHP codetab">index.php</code></a>
+                    </div>
+                  </nav>
+                  <br>
+                  <div class="tab-content" id="nav-tabContent">
+                    <div class="tab-pane fade show active" id="-php3" role="tabpanel" aria-labelledby="nav-home-tab">
+                      <div class='CodeBoxL'>
+                        <pre class="prettyprint linenums lang-php CodeBoxBuffer">
+&lt;!DOCTYPE html>
+&lt;html>
+ &lt;body>
+   &lt;h1>Form Example&lt;/h1>
+   &lt;form  method="post" action="&lt;?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+     Enter Something: &lt;input type="text" name="test">
+     &lt;input type="submit" name="submit" value="Click Me">
+   &lt;/form>
+ &lt;/body>
+&lt;/html>
+</pre>
+                      </div>
+                    </div>
+                  </div>
+                  <div style="text-align:center">
+                    <img class="finalResultWapper" src="images/post.PNG" alt=""></img>
+                  </div>
+                  <br>
+                  <p>Now the method says "post"</p>
+                  <p>
+                    The URL will NOT display the information. POST is more secretive and secure when sending
+                    log in information, updating records, or handling any confidential information.
+                  </p>
+                </section>
+                <section id="section_REGEXP">
+                  <a id="_REGEXP"><h1><codeG>Regular Expressions</codeG></h1></a>
+                  <p>
+                    Regular expressions (used for pattern matching) is a rather broad topic. The basic concept is that
+                    it grabs the value given and compares it to expressions.
+                  </p>
+                  <div style="text-align:center">
+                    <img class="finalResultWapper" src="images/regexp.PNG" alt=""></img>
+                  </div>
+                  <p>
+                    This is some of the basic uses of expressions. They can be combined in any number of ways to
+                    form complex expressions on if data is inputted exactly the way you need. We won’t cover this
+                    topic in this sheet in great detail. At this moment, just know that it exists.
+                  </p>
+                </section>
+
+                <section id="section_FORMVALIDATOR">
+                  <a id="_FORMVALIDATOR"><h1><codeG>Form Validator</codeG></h1></a>
+                  <p>
+                    Tying it all together, we will use the concept learned to make a basic validator that checks if you
+                    inputted information correctly.
+                  </p>
+                  <a id="0SWTBS"><h2><code class="prettifyPHP">The Basic Skeleton</code></h2></a>
+                  <nav>
+                    <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                      <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#-php4" role="tab" aria-controls="nav-home" aria-selected="true"><code class="prettifyPHP codetab">index.php</code></a>
+                    </div>
+                  </nav>
+                  <br>
+                  <div class="tab-content" id="nav-tabContent">
+                    <div class="tab-pane fade show active" id="-php4" role="tabpanel" aria-labelledby="nav-home-tab">
+                      <div class='CodeBoxL'>
+                        <pre class="prettyprint linenums lang-php CodeBoxBuffer">
+&lt;!DOCTYPE html>
+&lt;html>
+  &lt;head>
+    &lt;style>
+      .error {color:#FF0000;}
+    &lt;/style>
+  &lt;/head>
+
+  &lt;body>
+   &lt;h2>PHP Form Validation Example&lt;/h2>
+   &lt;p>&lt;span class="error">* required field&lt;/span>&lt;/p>
+   &lt;form  method="post" action="&lt;?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+     &lt;input type="submit" name="submit" value="Submit">
+   &lt;/form>
+  &lt;/body>
+&lt;/html>
+</pre>
+                      </div>
+                    </div>
+                  </div>
+                  <div style="text-align:center">
+                    <img class="finalResultWapper" src="images/FormValid.PNG" alt=""></img>
+                  </div>
+                  <p>This is the basic setup for the validation form. Notice how we still follow HTML rules?</p>
+                  <a id="0VI"><h2><code class="prettifyPHP">Validating input</code></h2></a>
+                  <nav>
+                    <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                      <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#-php4" role="tab" aria-controls="nav-home" aria-selected="true"><code class="prettifyPHP codetab">index.php</code></a>
+                    </div>
+                  </nav>
+                  <br>
+                  <div class="tab-content" id="nav-tabContent">
+                    <div class="tab-pane fade show active" id="-php4" role="tabpanel" aria-labelledby="nav-home-tab">
+                      <div class='CodeBoxL'>
+                        <pre class="prettyprint linenums lang-php CodeBoxBuffer">
+&lt;!DOCTYPE html>
+&lt;html>
+  &lt;head>
+    &lt;style>
+      .error {color:#FF0000;}
+    &lt;/style>
+  &lt;/head>
+
+  &lt;body>
+
+    &lt;!-- Add this code here! -->
+    &lt;?php
+      $nameErr = $emailErr = $genderErr = $websiteErr = "";
+      $name = $email = $gender = $comment = $website = "";
+
+      if($_SERVER["REQUEST_METHOD"] == "POST"){
+
+      }
+    ?>
+    &lt;!-- Add this code here! -->
+
+   &lt;h2>PHP Form Validation Example&lt;/h2>
+   &lt;p>&lt;span class="error">* required field&lt;/span>&lt;/p>
+   &lt;form  method="post" action="&lt;?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+     &lt;input type="submit" name="submit" value="Submit">
+   &lt;/form>
+  &lt;/body>
+&lt;/html>
+</pre>
+                      </div>
+                    </div>
+                  </div>
+                  <p>
+                    Add this code right after the body tag.
+                  </p>
+                  <p>
+                    This creates all variables you
+                    need (the variables with equals
+                    [=] between them is a PHP
+                    feature to set multiple variables to
+                    the same value on one line).
+                  </p>
+                  <p>
+                    See the server variable in use?
+                    This one is accessing the request
+                    method to make sure that it is
+                    POST (this is so that you only
+                    have private data uploaded to the
+                    server, and not seen on the
+                    browser URL).
+                  </p>
+                  <nav>
+                    <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                      <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#-php4" role="tab" aria-controls="nav-home" aria-selected="true"><code class="prettifyPHP codetab">index.php</code></a>
+                    </div>
+                  </nav>
+                  <br>
+                  <div class="tab-content" id="nav-tabContent">
+                    <div class="tab-pane fade show active" id="-php4" role="tabpanel" aria-labelledby="nav-home-tab">
+                      <div class='CodeBoxL'>
+                        <pre class="prettyprint linenums lang-php CodeBoxBuffer">
+&lt;!DOCTYPE html>
+&lt;html>
+  &lt;head>
+    &lt;style>
+      .error {color:#FF0000;}
+    &lt;/style>
+  &lt;/head>
+
+  &lt;body>
+
+    &lt;?php
+      $nameErr = $emailErr = $genderErr = $websiteErr = "";
+      $name = $email = $gender = $comment = $website = "";
+
+      if($_SERVER["REQUEST_METHOD"] == "POST"){
+        // Add this code
+        if(empty($_POST["name"])) {
+          $nameErr = "Name is required";
+        } else {
+          $name = test_input($_POST["name"]);
+          // check if name only constains letters and white space
+          if(!preg_match("/^[a-zA-Z]*$/",$name)){
+            $nameErr = "Only letters and white space allowed";
+          }
+        }
+        // Add this code
+      }
+    ?>
+
+   &lt;h2>PHP Form Validation Example&lt;/h2>
+   &lt;p>&lt;span class="error">* required field&lt;/span>&lt;/p>
+   &lt;form  method="post" action="&lt;?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+     &lt;input type="submit" name="submit" value="Submit">
+   &lt;/form>
+  &lt;/body>
+&lt;/html>
+</pre>
+                      </div>
+                    </div>
+                  </div>
+                  <p>
+                    Enter the highlighted code in
+                    between the new if statement.
+                  </p>
+                  <p>This checks to make sure that the
+                    "name" input is uppercase and
+                    lowercase letters only (that’s what
+                    the preg_match()) is for.</p>
+                  <p>
+                    The test_input() is a function you
+                    will be writing later.
+                  </p>
+                  <nav>
+                    <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                      <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#-php4" role="tab" aria-controls="nav-home" aria-selected="true"><code class="prettifyPHP codetab">index.php</code></a>
+                    </div>
+                  </nav>
+                  <br>
+                  <div class="tab-content" id="nav-tabContent">
+                    <div class="tab-pane fade show active" id="-php4" role="tabpanel" aria-labelledby="nav-home-tab">
+                      <div class='CodeBoxL'>
+                        <pre class="prettyprint linenums lang-php CodeBoxBuffer">
+&lt;!DOCTYPE html>
+&lt;html>
+  &lt;head>
+    &lt;style>
+      .error {color:#FF0000;}
+    &lt;/style>
+  &lt;/head>
+
+  &lt;body>
+
+    &lt;?php
+      $nameErr = $emailErr = $genderErr = $websiteErr = "";
+      $name = $email = $gender = $comment = $website = "";
+
+      if($_SERVER["REQUEST_METHOD"] == "POST"){
+        if(empty($_POST["name"])) {
+          $nameErr = "Name is required";
+        } else {
+          $name = test_input($_POST["name"]);
+          // check if name only constains letters and white space
+          if(!preg_match("/^[a-zA-Z]*$/",$name)){
+            $nameErr = "Only letters and white space allowed";
+          }
+        }
+
+        // Add this code
+        if(empty($_POST["email"])) {
+          $emailErr = "Email is required";
+        } else {
+          $name = test_input($_POST["email"]);
+          // check if email is well formed
+          if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
+            $emailErr = "Invalid email format";
+          }
+        }
+        // Add this code
+      }
+    ?>
+
+   &lt;h2>PHP Form Validation Example&lt;/h2>
+   &lt;p>&lt;span class="error">* required field&lt;/span>&lt;/p>
+   &lt;form  method="post" action="&lt;?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+     &lt;input type="submit" name="submit" value="Submit">
+   &lt;/form>
+  &lt;/body>
+&lt;/html>
+</pre>
+                      </div>
+                    </div>
+                  </div>
+                  <p>
+                    Add in the next section
+                    underneath the name test.
+                  </p>
+                  <p>This one checks the email input.</p>
+                  <nav>
+                    <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                      <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#-php4" role="tab" aria-controls="nav-home" aria-selected="true"><code class="prettifyPHP codetab">index.php</code></a>
+                    </div>
+                  </nav>
+                  <br>
+                  <div class="tab-content" id="nav-tabContent">
+                    <div class="tab-pane fade show active" id="-php4" role="tabpanel" aria-labelledby="nav-home-tab">
+                      <div class='CodeBoxL'>
+                        <pre class="prettyprint linenums lang-php CodeBoxBuffer">
+&lt;!DOCTYPE html>
+&lt;html>
+  &lt;head>
+    &lt;style>
+      .error {color:#FF0000;}
+    &lt;/style>
+  &lt;/head>
+
+  &lt;body>
+
+    &lt;?php
+      $nameErr = $emailErr = $genderErr = $websiteErr = "";
+      $name = $email = $gender = $comment = $website = "";
+
+      if($_SERVER["REQUEST_METHOD"] == "POST"){
+        if(empty($_POST["name"])) {
+          $nameErr = "Name is required";
+        } else {
+          $name = test_input($_POST["name"]);
+          // check if name only constains letters and white space
+          if(!preg_match("/^[a-zA-Z]*$/",$name)){
+            $nameErr = "Only letters and white space allowed";
+          }
+        }
+
+        if(empty($_POST["email"])) {
+          $emailErr = "Email is required";
+        } else {
+          $email = test_input($_POST["email"]);
+          // check if email is well formed
+          if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
+            $emailErr = "Invalid email format";
+          }
+        }
+
+        // Add this code
+        if(empty($_POST["website"])) {
+          $website = "";
+        } else {
+          $website = test_input($_POST["website"]);
+          // check if URL is valid
+          if(!preg_match("/\b(?:(?:https?|ftp):\/\/|www\.)[-a-z0-9+&@#\/%?=~_|!:,.;]*[-a-z0-9+&@#\/%=~_|]/i",$website)){
+            $websiteErr = "Invalid URL";
+          }
+        }
+        // Add this code
+      }
+    ?>
+
+   &lt;h2>PHP Form Validation Example&lt;/h2>
+   &lt;p>&lt;span class="error">* required field&lt;/span>&lt;/p>
+   &lt;form  method="post" action="&lt;?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+     &lt;input type="submit" name="submit" value="Submit">
+   &lt;/form>
+  &lt;/body>
+&lt;/html>
+</pre>
+                      </div>
+                    </div>
+                  </div>
+                  <p>
+                    This one is rather complicated, in
+                    order to make sure the website is
+                    valid the preg_match() will match
+                    the expression of a website
+                    format.
+                  </p>
+                  <nav>
+                    <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                      <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#-php4" role="tab" aria-controls="nav-home" aria-selected="true"><code class="prettifyPHP codetab">index.php</code></a>
+                    </div>
+                  </nav>
+                  <br>
+                  <div class="tab-content" id="nav-tabContent">
+                    <div class="tab-pane fade show active" id="-php4" role="tabpanel" aria-labelledby="nav-home-tab">
+                      <div class='CodeBoxL'>
+                        <pre class="prettyprint linenums lang-php CodeBoxBuffer">
+&lt;!DOCTYPE html>
+&lt;html>
+  &lt;head>
+    &lt;style>
+      .error {color:#FF0000;}
+    &lt;/style>
+  &lt;/head>
+
+  &lt;body>
+
+    &lt;?php
+      $nameErr = $emailErr = $genderErr = $websiteErr = "";
+      $name = $email = $gender = $comment = $website = "";
+
+      if($_SERVER["REQUEST_METHOD"] == "POST"){
+        if(empty($_POST["name"])) {
+          $nameErr = "Name is required";
+        } else {
+          $name = test_input($_POST["name"]);
+          // check if name only constains letters and white space
+          if(!preg_match("/^[a-zA-Z]*$/",$name)){
+            $nameErr = "Only letters and white space allowed";
+          }
+        }
+
+        if(empty($_POST["email"])) {
+          $emailErr = "Email is required";
+        } else {
+          $email = test_input($_POST["email"]);
+          // check if email is well formed
+          if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
+            $emailErr = "Invalid email format";
+          }
+        }
+
+        if(empty($_POST["website"])) {
+          $website = "";
+        } else {
+          $website = test_input($_POST["website"]);
+          // check if URL is valid
+          if(!preg_match("/\b(?:(?:https?|ftp):\/\/|www\.)[-a-z0-9+&@#\/%?=~_|!:,.;]*[-a-z0-9+&@#\/%=~_|]/i",$website)){
+            $websiteErr = "Invalid URL";
+          }
+        }
+
+        // Add this code
+        if(empty($_POST["comment"])) {
+          $comment = "";
+        } else {
+          $comment = test_input($_POST["comment"])
+        }
+        // Add this code
+      }
+    ?>
+
+   &lt;h2>PHP Form Validation Example&lt;/h2>
+   &lt;p>&lt;span class="error">* required field&lt;/span>&lt;/p>
+   &lt;form  method="post" action="&lt;?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+     &lt;input type="submit" name="submit" value="Submit">
+   &lt;/form>
+  &lt;/body>
+&lt;/html>
+</pre>
+                      </div>
+                    </div>
+                  </div>
+                  <p>
+                    This one is rather complicated, in
+                    order to make sure the website is
+                    valid the preg_match() will match
+                    the expression of a website
+                    format.
+                  </p>
+                  <nav>
+                    <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                      <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#-php4" role="tab" aria-controls="nav-home" aria-selected="true"><code class="prettifyPHP codetab">index.php</code></a>
+                    </div>
+                  </nav>
+                  <br>
+                  <div class="tab-content" id="nav-tabContent">
+                    <div class="tab-pane fade show active" id="-php4" role="tabpanel" aria-labelledby="nav-home-tab">
+                      <div class='CodeBoxL'>
+                        <pre class="prettyprint linenums lang-php CodeBoxBuffer">
+&lt;!DOCTYPE html>
+&lt;html>
+  &lt;head>
+    &lt;style>
+      .error {color:#FF0000;}
+    &lt;/style>
+  &lt;/head>
+
+  &lt;body>
+
+    &lt;?php
+      $nameErr = $emailErr = $genderErr = $websiteErr = "";
+      $name = $email = $gender = $comment = $website = "";
+
+      if($_SERVER["REQUEST_METHOD"] == "POST"){
+        if(empty($_POST["name"])) {
+          $nameErr = "Name is required";
+        } else {
+          $name = test_input($_POST["name"]);
+          // check if name only constains letters and white space
+          if(!preg_match("/^[a-zA-Z]*$/",$name)){
+            $nameErr = "Only letters and white space allowed";
+          }
+        }
+
+        if(empty($_POST["email"])) {
+          $emailErr = "Email is required";
+        } else {
+          $email = test_input($_POST["email"]);
+          // check if email is well formed
+          if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
+            $emailErr = "Invalid email format";
+          }
+        }
+
+        if(empty($_POST["website"])) {
+          $website = "";
+        } else {
+          $website = test_input($_POST["website"]);
+          // check if URL is valid
+          if(!preg_match("/\b(?:(?:https?|ftp):\/\/|www\.)[-a-z0-9+&@#\/%?=~_|!:,.;]*[-a-z0-9+&@#\/%=~_|]/i",$website)){
+            $websiteErr = "Invalid URL";
+          }
+        }
+
+        if(empty($_POST["comment"])) {
+          $comment = "";
+        } else {
+          $comment = test_input($_POST["comment"])
+        }
+
+        // Add this code
+        if(empty($_POST["gender"])){
+          $genderErr = "Gender is required";
+        } else {
+          $gender = test_input($_POST["gender"])
+        }
+        // Add this code
+      }
+    ?>
+
+   &lt;h2>PHP Form Validation Example&lt;/h2>
+   &lt;p>&lt;span class="error">* required field&lt;/span>&lt;/p>
+   &lt;form  method="post" action="&lt;?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+     &lt;input type="submit" name="submit" value="Submit">
+   &lt;/form>
+  &lt;/body>
+&lt;/html>
+</pre>
+                      </div>
+                    </div>
+                  </div>
+                  <p>
+                    Final check to see if gender was
+                    selected.
+                  </p>
+                  <a id="0ti"><h2><code class="prettifyPHP">testInput()</code></h2></a>
+                  <nav>
+                    <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                      <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#-php4" role="tab" aria-controls="nav-home" aria-selected="true"><code class="prettifyPHP codetab">index.php</code></a>
+                    </div>
+                  </nav>
+                  <br>
+                  <div class="tab-content" id="nav-tabContent">
+                    <div class="tab-pane fade show active" id="-php4" role="tabpanel" aria-labelledby="nav-home-tab">
+                      <div class='CodeBoxL'>
+                        <pre class="prettyprint linenums lang-php CodeBoxBuffer">
+&lt;!DOCTYPE html>
+&lt;html>
+  &lt;head>
+    &lt;style>
+      .error {color:#FF0000;}
+    &lt;/style>
+  &lt;/head>
+
+  &lt;body>
+
+    &lt;?php
+      $nameErr = $emailErr = $genderErr = $websiteErr = "";
+      $name = $email = $gender = $comment = $website = "";
+
+      if($_SERVER["REQUEST_METHOD"] == "POST"){
+        if(empty($_POST["name"])) {
+          $nameErr = "Name is required";
+        } else {
+          $name = test_input($_POST["name"]);
+          // check if name only constains letters and white space
+          if(!preg_match("/^[a-zA-Z]*$/",$name)){
+            $nameErr = "Only letters and white space allowed";
+          }
+        }
+
+        if(empty($_POST["email"])) {
+          $emailErr = "Email is required";
+        } else {
+          $email = test_input($_POST["email"]);
+          // check if email is well formed
+          if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
+            $emailErr = "Invalid email format";
+          }
+        }
+
+        if(empty($_POST["website"])) {
+          $website = "";
+        } else {
+          $website = test_input($_POST["website"]);
+          // check if URL is valid
+          if(!preg_match("/\b(?:(?:https?|ftp):\/\/|www\.)[-a-z0-9+&@#\/%?=~_|!:,.;]*[-a-z0-9+&@#\/%=~_|]/i",$website)){
+            $websiteErr = "Invalid URL";
+          }
+        }
+
+        if(empty($_POST["comment"])) {
+          $comment = "";
+        } else {
+          $comment = test_input($_POST["comment"])
+        }
+
+        if(empty($_POST["gender"])){
+          $genderErr = "Gender is required";
+        } else {
+          $gender = test_input($_POST["gender"])
+        }
+      }
+
+      // Add this code
+      function test_input($data) {
+        $data = trim($data);
+        $data = stripslashes($data);
+        $data = htmlspecialchars($data);
+        return $data;
+      }
+      // Add this code
+
+    ?>
+
+   &lt;h2>PHP Form Validation Example&lt;/h2>
+   &lt;p>&lt;span class="error">* required field&lt;/span>&lt;/p>
+   &lt;form  method="post" action="&lt;?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+     &lt;input type="submit" name="submit" value="Submit">
+   &lt;/form>
+  &lt;/body>
+&lt;/html>
+</pre>
+                      </div>
+                    </div>
+                  </div>
+                  <p>
+                    Right at the end of the PHP tag, add this
+                    function
+                  </p>
+                  <p>
+                    This is <strong>VITAL</strong>​ when inputting data through
+                    PHP. When data is being processed, it is
+                    possible that hackers can inject php scripts
+                    through your input and cause havoc!
+                  </p>
+                  <p>
+                    trim(): Takes away any trailing white spaces.
+                  </p>
+                  <p>
+                    stripslashes(): Removes any slashes (/) from
+                    the input. This is especially important.
+                  </p>
+                  <p>
+                    htmlspecialchars(): This converts special
+                    characters to HTML elements (this is also
+                    used to prevent any fishy code being placed
+                    in your input.
+                  </p>
+                  <a id="0AFE"><h2><code class="prettifyPHP">Adding Form Elements</code></h2></a>
+                  <nav>
+                    <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                      <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#-php4" role="tab" aria-controls="nav-home" aria-selected="true"><code class="prettifyPHP codetab">index.php</code></a>
+                    </div>
+                  </nav>
+                  <br>
+                  <div class="tab-content" id="nav-tabContent">
+                    <div class="tab-pane fade show active" id="-php4" role="tabpanel" aria-labelledby="nav-home-tab">
+                      <div class='CodeBoxL'>
+                        <pre style="padding-left:15px;" class="prettyprint linenums lang-php CodeBoxBuffer">
+&lt;!DOCTYPE html>
+&lt;html>
+  &lt;head>
+    &lt;style>
+      .error {color:#FF0000;}
+    &lt;/style>
+  &lt;/head>
+
+  &lt;body>
+
+    &lt;?php
+      $nameErr = $emailErr = $genderErr = $websiteErr = "";
+      $name = $email = $gender = $comment = $website = "";
+
+      if($_SERVER["REQUEST_METHOD"] == "POST"){
+        if(empty($_POST["name"])) {
+          $nameErr = "Name is required";
+        } else {
+          $name = test_input($_POST["name"]);
+          // check if name only constains letters and white space
+          if(!preg_match("/^[a-zA-Z]*$/",$name)){
+            $nameErr = "Only letters and white space allowed";
+          }
+        }
+
+        if(empty($_POST["email"])) {
+          $emailErr = "Email is required";
+        } else {
+          $email = test_input($_POST["email"]);
+          // check if email is well formed
+          if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
+            $emailErr = "Invalid email format";
+          }
+        }
+
+        if(empty($_POST["website"])) {
+          $website = "";
+        } else {
+          $website = test_input($_POST["website"]);
+          // check if URL is valid
+          if(!preg_match("/\b(?:(?:https?|ftp):\/\/|www\.)[-a-z0-9+&@#\/%?=~_|!:,.;]*[-a-z0-9+&@#\/%=~_|]/i",$website)){
+            $websiteErr = "Invalid URL";
+          }
+        }
+
+        if(empty($_POST["comment"])) {
+          $comment = "";
+        } else {
+          $comment = test_input($_POST["comment"])
+        }
+
+        if(empty($_POST["gender"])){
+          $genderErr = "Gender is required";
+        } else {
+          $gender = test_input($_POST["gender"])
+        }
+      }
+
+      function test_input($data) {
+        $data = trim($data);
+        $data = stripslashes($data);
+        $data = htmlspecialchars($data);
+        return $data;
+      }
+
+    ?>
+
+   &lt;h2>PHP Form Validation Example&lt;/h2>
+   &lt;p>&lt;span class="error">* required field&lt;/span>&lt;/p>
+   &lt;form  method="post" action="&lt;?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+
+     &lt;!-- Add this code -->
+
+     Name: &lt;input type="text" name="name" value="&lt;?php echo $name;?>">
+     &lt;span class="error">*&lt;?php echo $nameErr;?>&lt;/span>
+     &lt;br>&lt;br>
+
+     Email: &lt;input type="text" name="email" value="&lt;?php echo $email;?>">
+     &lt;span class="error">*&lt;?php echo $emailErr;?>&lt;/span>
+     &lt;br>&lt;br>
+
+     Website: &lt;input type="text" name="website" value="&lt;?php echo $website;?>">
+     &lt;span class="error">*&lt;?php echo $websiteErr;?>&lt;/span>
+     &lt;br>&lt;br>
+
+     Comment: &lt;textarea name="comment" rows="5" cols="40">&lt;?php echo $comment;?>&lt;/textarea>
+     &lt;br>&lt;br>
+
+     Gender:
+     &lt;input type="radio" name="gender" &lt;?php if(isset($gender) && $gender == "female") echo "checked";?> value="female">Female
+     &lt;input type="radio" name="gender" &lt;?php if(isset($gender) && $gender == "male") echo "checked";?> value="male">Male
+     &lt;input type="radio" name="gender" &lt;?php if(isset($gender) && $gender == "other") echo "checked";?> value="other">Other
+     &lt;span class="error">*&lt;?php echo $genderErr;?>&lt;/span>
+     &lt;br>&lt;br>
+
+     &lt;!-- Add this code -->
+
+     &lt;input type="submit" name="submit" value="Submit">
+   &lt;/form>
+  &lt;/body>
+&lt;/html>
+</pre>
+                      </div>
+                    </div>
+                  </div>
+                  <p>
+                    Add in the code to populate the HTML form.
+                  </p>
+                  <a id="0FR"><h2><code class="prettifyPHP">Final Result</code></h2></a>
+                  <nav>
+                    <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                      <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#-php4" role="tab" aria-controls="nav-home" aria-selected="true"><code class="prettifyPHP codetab">index.php</code></a>
+                    </div>
+                  </nav>
+                  <br>
+                  <div class="tab-content" id="nav-tabContent">
+                    <div class="tab-pane fade show active" id="-php4" role="tabpanel" aria-labelledby="nav-home-tab">
+                      <div class='CodeBoxL'>
+                        <pre style="padding-left:15px;" class="prettyprint linenums lang-php CodeBoxBuffer">
+&lt;!DOCTYPE html>
+&lt;html>
+  &lt;head>
+    &lt;style>
+      .error {color:#FF0000;}
+    &lt;/style>
+  &lt;/head>
+
+  &lt;body>
+
+    &lt;?php
+      $nameErr = $emailErr = $genderErr = $websiteErr = "";
+      $name = $email = $gender = $comment = $website = "";
+
+      if($_SERVER["REQUEST_METHOD"] == "POST"){
+        if(empty($_POST["name"])) {
+          $nameErr = "Name is required";
+        } else {
+          $name = test_input($_POST["name"]);
+          // check if name only constains letters and white space
+          if(!preg_match("/^[a-zA-Z]*$/",$name)){
+            $nameErr = "Only letters and white space allowed";
+          }
+        }
+
+        if(empty($_POST["email"])) {
+          $emailErr = "Email is required";
+        } else {
+          $email = test_input($_POST["email"]);
+          // check if email is well formed
+          if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
+            $emailErr = "Invalid email format";
+          }
+        }
+
+        if(empty($_POST["website"])) {
+          $website = "";
+        } else {
+          $website = test_input($_POST["website"]);
+          // check if URL is valid
+          if(!preg_match("/\b(?:(?:https?|ftp):\/\/|www\.)[-a-z0-9+&@#\/%?=~_|!:,.;]*[-a-z0-9+&@#\/%=~_|]/i",$website)){
+            $websiteErr = "Invalid URL";
+          }
+        }
+
+        if(empty($_POST["comment"])) {
+          $comment = "";
+        } else {
+          $comment = test_input($_POST["comment"])
+        }
+
+        if(empty($_POST["gender"])){
+          $genderErr = "Gender is required";
+        } else {
+          $gender = test_input($_POST["gender"])
+        }
+      }
+
+      function test_input($data) {
+        $data = trim($data);
+        $data = stripslashes($data);
+        $data = htmlspecialchars($data);
+        return $data;
+      }
+
+    ?>
+
+   &lt;h2>PHP Form Validation Example&lt;/h2>
+   &lt;p>&lt;span class="error">* required field&lt;/span>&lt;/p>
+   &lt;form  method="post" action="&lt;?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+
+     Name: &lt;input type="text" name="name" value="&lt;?php echo $name;?>">
+     &lt;span class="error">*&lt;?php echo $nameErr;?>&lt;/span>
+     &lt;br>&lt;br>
+
+     Email: &lt;input type="text" name="email" value="&lt;?php echo $email;?>">
+     &lt;span class="error">*&lt;?php echo $emailErr;?>&lt;/span>
+     &lt;br>&lt;br>
+
+     Website: &lt;input type="text" name="website" value="&lt;?php echo $website;?>">
+     &lt;span class="error">*&lt;?php echo $websiteErr;?>&lt;/span>
+     &lt;br>&lt;br>
+
+     Comment: &lt;textarea name="comment" rows="5" cols="40">&lt;?php echo $comment;?>&lt;/textarea>
+     &lt;br>&lt;br>
+
+     Gender:
+     &lt;input type="radio" name="gender" &lt;?php if(isset($gender) && $gender == "female") echo "checked";?> value="female">Female
+     &lt;input type="radio" name="gender" &lt;?php if(isset($gender) && $gender == "male") echo "checked";?> value="male">Male
+     &lt;input type="radio" name="gender" &lt;?php if(isset($gender) && $gender == "other") echo "checked";?> value="other">Other
+     &lt;span class="error">*&lt;?php echo $genderErr;?>&lt;/span>
+     &lt;br>&lt;br>
+
+     &lt;input type="submit" name="submit" value="Submit">
+   &lt;/form>
+
+  &lt;!-- Add this code -->
+  &lt;?php
+    echo "&lt;h2>Your Input&lt;/h2>";
+    echo $name;
+    echo &lt;br>;
+    echo $email;
+    echo &lt;br>;
+    echo $website;
+    echo &lt;br>;
+    echo $comment;
+    echo &lt;br>;
+    echo $gender;
+  ?>
+  &lt;!-- Add this code -->
+
+  &lt;/body>
+&lt;/html>
+</pre>
+                      </div>
+                    </div>
+                  </div>
+                  <p>Add this code right at the end of the body.</p>
+                </section>
+
+                <section id="section_FINALPRODUCT">
+                  <a id="_FINALPRODUCT"><h1><codeG>Final Product</codeG></h1></a>
+                  <div class="paraCenter">
+                    <h1>You've made it!</h1>
+                    <p>
+                      This was definitely a trial to get through, but you did it! You are soon reaching the ability to
+                      allow users to log in to your website. Hopefully, you’re not scared away by PHP. Because you’ll
+                      still have one more project to get through later!
+                    </p>
+                  </div>
+                  <div class="finalResultWapper">
+                    <img src="images/final.PNG" alt=""></img>
+                  </div>
+                </section>
+
+                <section id="section_KC">
+                  <a id="_KC"><h1><codeG>Knowledge Check</codeG></h1></a>
+                  <ol>
+                    <li>What is the difference between javascript and PHP?</li>
+                    <li>What is XAMPP?</li>
+                    <li>What is the difference between GET and POST?</li>
+                    <li>Why do we need testInput()?</li>
+                  </ol>
+                </section>
+
+                <section id="section_CHALLENGES">
+                  <a id="_CHALLENGES"><h1><codeG>Challenges</codeG></h1></a>
+                  <p>None yet!</p>
+                </section>
+
+            </article>
+          </div>
+          <!-- <div class="docs-prevnext"><a class="docs-prev button" href="#">← Lorem</a><a class="docs-next button" href="#">Ipsum →</a></div> -->
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer class="nav-footer" id="footer">
+    <section class="sitemap">
+      <!-- <div>
+          <h5><a href="#">Lorem</a></h5>
+          <a href="#">Lorem</a>
+        </div>
+        <div>
+          <h5><a href="#">Lorem</a></h5>
+          <a href="#">Lorem</a>
+        </div>
+        <div>
+          <h5><a href="#">Lorem</a></h5>
+          <a href="#">Lorem</a>
+        </div> -->
+      <!-- <section class="copyright"> -->
+    </section>
+  </footer>
+  </div>
+</body>
+
+</html>
