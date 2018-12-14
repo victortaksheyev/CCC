@@ -1,0 +1,58 @@
+/* START NAVBAR */
+.navFixed {
+  background: #222;
+  color: #fff;
+  padding: 8px 0;
+  position: fixed;
+  width: 100%;
+  z-index: 9999
+}
+
+.navWrapper {
+  margin: 0 auto;
+  padding: 0 20px;
+  max-width: 1200px
+}
+
+/* Added in js */
+.navTitle {
+  color: #393939;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.2em;
+  margin-bottom: 8px;
+  margin-top: 0
+}
+
+/* END NAVBAR */
+/* --- */
+/* START PAGE */
+.contentWrapper {
+  margin: 0 auto;
+  padding: 0 20px;
+  max-width: 1200px;
+  display: flex;
+}
+
+/* END PAGE */
+/* START BUTTONS */
+.button {
+  border: 1px solid #222;
+  border-radius: 3px;
+  color: #222;
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.2em;
+  padding: 10px;
+  text-decoration: none !important;
+  transition: background .3s, color .3s
+}
+
+.button:hover {
+  background: #222;
+  color: #fff
+}
+
+/* END BUTTONS */
+/* eof */
