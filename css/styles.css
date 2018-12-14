@@ -110,7 +110,7 @@ article:after, article:before {
 }
 
 .navFixed {
-  background: #222;
+  background-color: #012129;
   color: #fff;
   padding: 8px 0;
   position: fixed;
@@ -327,9 +327,9 @@ textB {
   padding: 3.2px 6.4px
 }
 
-.CodeBox {
+.codeBox {
   margin: auto;
-  width: 75%;
+  width: 100%;
   color: #fff;
   border-radius: 20px;
   padding: 2px;
@@ -381,6 +381,14 @@ textB {
 
 .paraTitle {
   text-align: center;
+  font-size: 26px;
+}
+
+.paraCenterCenter {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .paraSection {
@@ -395,6 +403,7 @@ textB {
 
 .para {
   overflow: hidden;
+  margin-bottom: 10px;
 }
 
 .fl {
@@ -412,16 +421,12 @@ textB {
   margin: auto;
 }
 
-.tutImageContainer {
+.paraImage {
   width: 90%;
   margin: auto;
 }
 
-.tutImageContainer img {
-  width: 100%;
-}
-
-.tutImage {
+.paraImage img {
   width: 100%;
 }
 
@@ -499,7 +504,6 @@ textB {
   padding-left: 25px;
   padding-right: 25px;
   padding-bottom: 15px;
-  border-radius: 20px;
   margin-bottom: 1em;
 }
 
@@ -509,11 +513,13 @@ textB {
   width: 500px;
 }
 
-.tab-content h1 {
+.codeTabWrapper h1 {
   margin-top: 16px;
 }
 
 .tab-content {
+  max-width: 900px;
+  margin: auto;
   -webkit-touch-callout: none;
   /* iOS Safari */
   -webkit-user-select: none;

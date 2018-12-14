@@ -68,8 +68,10 @@ function buildTOCSubHeaders() {
         $temp = $("<li class='navListItem'><a class='navItem' href='#" + name + "'><code class=prettifyHTML>" + text + "</code></a></li>")
       } else if ($id == "sql") {
         $temp = $("<li class='navListItem'><a class='navItem' href='#" + name + "'><code class=prettifySQL>" + text + "</code></a></li>")
-      } else {
+      } else if ($id == "result") {
         $temp = $("<li class='navListItem'><a class='navItem' href='#" + name + "'><code class=prettifyResult>" + text + "</code></a></li>")
+      } else {
+        $temp = $("<li class='navListItem'><a class='navItem' href='#" + name + "'>" + text + "</a></li>")
       }
       $("#TOC" + tocname).append($temp);
     }
@@ -90,7 +92,7 @@ function populateTOC() {
   for (var i = 0; i < sections.length; i++) {
     let name = sections[i].id;
     let text = ($(sections[i]).find("a")[0].innerText);
-    $temp = $("<li class='navListItem'><a class='navItem' href='#_" + name + "'><codeG>" + text + "</codeG></a></li>")
+    $temp = $("<li class='navListItem'><a class='navItem' href='#" + name + "'><code class='prettifyResult'>" + text + "</code></a></li>")
     $("#tocDynamic").append($temp);
     $temp = $("<section id='TOC" + name + "'>")
     $("#tocDynamic").append($temp);
@@ -189,9 +191,6 @@ function createTOC() {
   for (var i = 0; i < TOC_names.length; i++) {
     TOC_break.push(document.getElementById(TOC_names[i]).getBoundingClientRect().y);
   }
-  console.log(TOC_names);
-  console.log(TOC_break);
-
 }
 
 function updateTOC() {

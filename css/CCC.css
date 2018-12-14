@@ -1,6 +1,6 @@
 /* START NAVBAR */
 .navFixed {
-  background: #222;
+  background-color: #012129;
   color: #fff;
   padding: 8px 0;
   position: fixed;
@@ -55,4 +55,39 @@
 }
 
 /* END BUTTONS */
+/* START PARA */
+.paraTitle {
+  text-align: center;
+  font-size: 26px;
+}
+
+.para {
+  overflow: hidden;
+}
+
+.paraCenter {
+  text-align: center;
+}
+
+.paraSection {
+  background-color: #edf4f7;
+  width: 99%;
+  margin: auto;
+  padding-top: 15px;
+  padding-left: 25px;
+  padding-right: 25px;
+  padding-bottom: 15px;
+}
+
+.fl {
+  width: 50%;
+  float: left;
+}
+
+.fr {
+  width: 50%;
+  float: right;
+}
+
+/* END PARA */
 /* eof */
