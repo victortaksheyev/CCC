@@ -1,3 +1,53 @@
+/* START GENERAL */
+body {
+  background-color: #f5fcff;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin-bottom: 16px;
+  margin-top: 1.2em;
+}
+
+h1 {
+  font-size: 32px;
+}
+
+h2 {
+  font-size: 24px;
+}
+
+h3 {
+  font-size: 20px;
+}
+
+h4 {
+  font-size: 16px;
+}
+
+h5 {
+  font-size: 14px;
+}
+
+h6 {
+  font-size: 13.6px;
+}
+
+.noselect {
+  -webkit-touch-callout: none;
+  /* iOS Safari */
+  -webkit-user-select: none;
+  /* Safari */
+  -khtml-user-select: none;
+  /* Konqueror HTML */
+  -moz-user-select: none;
+  /* Firefox */
+  -ms-user-select: none;
+  /* Internet Explorer/Edge */
+  user-select: none;
+  /* Non-prefixed version, currently supported by Chrome and Opera */
+}
+
+/* END GENERAL */
 /* START NAVBAR */
 .navFixed {
   background-color: #012129;
@@ -32,6 +82,8 @@
   padding: 0 20px;
   max-width: 1200px;
   display: flex;
+  min-height: calc(100vh - 50px);
+  padding-top: 50px
 }
 
 /* END PAGE */
@@ -63,6 +115,7 @@
 
 .para {
   overflow: hidden;
+  margin-bottom: 10px;
 }
 
 .paraCenter {
@@ -89,5 +142,321 @@
   float: right;
 }
 
+.paraImage {
+  width: 90%;
+  margin: auto;
+}
+
+.paraImage img {
+  width: 100%;
+}
+
 /* END PARA */
+/* START TEXT */
+.code {
+  background-color: rgba(27, 31, 35, .05);
+  border-radius: 3px;
+  color: inherit;
+  font-family: SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, Courier New, monospace;
+  font-size: 85%;
+  margin: 0;
+  padding: 3.2px 6.4px;
+}
+
+.codeR {
+  background-color: rgba(255, 0, 0, .1);
+  border-radius: 3px;
+  color: inherit;
+  font-family: SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, Courier New, monospace;
+  font-size: 85%;
+  margin: 0;
+  padding: 3.2px 6.4px
+}
+
+.codeG {
+  background-color: rgba(0, 250, 0, .1);
+  border-radius: 3px;
+  color: inherit;
+  font-family: SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, Courier New, monospace;
+  font-size: 85%;
+  margin: 0;
+  padding: 3.2px 6.4px
+}
+
+.codeB {
+  background-color: rgba(0, 0, 250, .1);
+  border-radius: 3px;
+  color: inherit;
+  font-family: SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, Courier New, monospace;
+  font-size: 85%;
+  margin: 0;
+  padding: 3.2px 6.4px
+}
+
+.textR {
+  background-color: rgba(255, 0, 0, .1);
+  border-radius: 3px;
+  color: inherit;
+  margin: 0;
+  padding: 3.2px 6.4px
+}
+
+.textG {
+  background-color: rgba(0, 250, 0, .1);
+  border-radius: 3px;
+  color: inherit;
+  margin: 0;
+  padding: 3.2px 6.4px
+}
+
+.textB {
+  background-color: rgba(0, 0, 250, .1);
+  border-radius: 3px;
+  color: inherit;
+  margin: 0;
+  padding: 3.2px 6.4px
+}
+
+.prettifyHTML {
+  color: #ed5565;
+  background-color: #2f3640;
+}
+
+.prettifyCOM {
+  color: #90EE90;
+  background-color: #2f3640;
+}
+
+.prettifySQL {
+  color: #f0ff76;
+  background-color: #2f3640;
+}
+
+.prettifyCSS {
+  background-color: #2f3640;
+  color: #90EE90;
+}
+
+.prettifyJS {
+  background-color: #2f3640;
+  color: #4fc1e9
+}
+
+.prettifyPHP {
+  background-color: #2f3640;
+  color: #ac92ec;
+}
+
+.prettifyResult {
+  background-color: #2f3640;
+  color: #e6e9ed;
+}
+
+.prettifyPurple {
+  background-color: #2f3640;
+  color: #ac92ec;
+}
+
+.face {
+  color: #f0ff76;
+  background-color: #2f3640;
+  border-radius: 3px;
+  font-family: SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, Courier New, monospace;
+  font-size: 85%;
+  margin: 0;
+  padding: 3.2px 6.4px
+}
+
+/* END TEXT */
+/* START TOC */
+.toc {
+  flex: 0 0 240px;
+  height: calc(100vh);
+  position: sticky;
+  overflow-y: auto;
+  top: 50px;
+  padding: 40px 0;
+}
+
+.toc ul {
+  padding: 0 8px
+}
+
+.toc ul li {
+  list-style-type: none;
+}
+
+.toc a {
+  border: none;
+  color: #717171;
+  display: block;
+  font-size: 14px;
+  padding: 4px 0;
+  transition: color .3s
+}
+
+/* END TOC */
+/* START FOOTER */
+.nav-footer {
+  background: #20232a;
+  border: none;
+  color: #202020;
+  font-size: 15px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 400;
+  line-height: 24px;
+  padding-bottom: 2em;
+  padding-top: 2em;
+  position: relative
+}
+
+/* END FOOTER */
+/* START CODE EXAMPLES */
+.codeBox {
+  margin: auto;
+  width: 100%;
+  color: #fff;
+  border-radius: 20px;
+  padding: 2px;
+  font-size: 150%;
+  margin-bottom: 1em;
+}
+
+.codeBoxBuffer {
+  overflow: auto;
+}
+
+.codeTab {
+  font-size: 20px;
+}
+
+.resultBox {
+  background-color: #edf4f7;
+  width: 99%;
+  margin: auto;
+  padding-top: 15px;
+  padding-left: 25px;
+  padding-right: 25px;
+  padding-bottom: 15px;
+  margin-bottom: 1em;
+}
+
+/* END CODE EXAMPLES */
+/* START PRETTY PRINT */
+/*! Color themes for Google Code Prettify | MIT License | github.com/jmblog/color-themes-for-google-code-prettify */
+.prettyprint {
+  background: #2f3640;
+  font-family: Menlo, "Bitstream Vera Sans Mono", "DejaVu Sans Mono", Monaco, Consolas, monospace;
+  border: 0 !important;
+}
+
+.pln {
+  color: #e6e9ed;
+}
+
+/* Specify class=linenums on a pre to get line numbering */
+ol.linenums {
+  margin-top: 0;
+  margin-bottom: 0;
+  color: #656d78;
+}
+
+li.L0,
+li.L1,
+li.L2,
+li.L3,
+li.L4,
+li.L5,
+li.L6,
+li.L7,
+li.L8,
+li.L9 {
+  background-color: #2f3640;
+  list-style-type: decimal;
+}
+
+@media screen {
+
+  /* string content */
+  .str {
+    color: #ffce54;
+  }
+
+  /* keyword */
+  .kwd {
+    color: #4fc1e9;
+  }
+
+  /* comment */
+  .com {
+    color: #90EE90;
+  }
+
+  /* type name */
+  .typ {
+    color: #4fc1e9;
+  }
+
+  /* literal value */
+  .lit {
+    color: #ac92ec;
+  }
+
+  /* punctuation */
+  .pun {
+    /* color: #e6e9ed; */
+    color: #f2f25c;
+  }
+
+  /* lisp open bracket */
+  .opn {
+    color: #e6e9ed;
+  }
+
+  /* lisp close bracket */
+  .clo {
+    color: #e6e9ed;
+  }
+
+  /* markup tag name */
+  .tag {
+    color: #ed5565;
+  }
+
+  /* markup attribute name */
+  .atn {
+    color: #a0d468;
+  }
+
+  /* markup attribute value */
+  .atv {
+    color: #ffce54;
+  }
+
+  /* declaration */
+  .dec {
+    color: #ac92ec;
+  }
+
+  /* variable name */
+  .var {
+    color: #e6e9ed;
+  }
+
+  /* function name */
+  .fun {
+    color: #e6e9ed;
+  }
+}
+
+/* END PRETTY PRINT */
+/* START MEDIA  */
+@media only screen and (max-width: 1200px) {
+  .toc {
+    display: none;
+  }
+}
+
+/* END MEDIA */
 /* eof */

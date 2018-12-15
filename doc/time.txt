@@ -1,3 +1,8 @@
+// Mikian: Start         -
+// Mikian: End           -
+// Mikian: Comment       -
+// Mikian: GitHub Commit -
+
 // Mikian: Start - 12/13/2018 10:30PM
 // Mikian: End - 12/14/2018 1:00AM
 // Mikian: Comment - Started creating example page and cleaning up CSS/JS
@@ -7,3 +12,8 @@
 // Mikian: End           - 12/14/2018 3:45PM
 // Mikian: Comment       - Finished the base example page and continued to condense the CSS/JS
 // Mikian: GitHub Commit - e964734
+
+// Mikian: Start         - 12/14/2018 8:30PM
+// Mikian: End           - 12/14/2018 9:30PM
+// Mikian: Comment       - Finished combining css into CCC.css.
+// Mikian: GitHub Commit -

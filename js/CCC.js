@@ -59,17 +59,17 @@ function buildTOCSubHeaders() {
       text = text.replace(/</g, "&lt;")
       $id = $("head").attr('id');
       if ($id == "php") {
-        $temp = $("<li class='navListItem'><a class='navItem' href='#" + name + "'><code class=prettifyPHP>" + text + "</code></a></li>")
+        $temp = $("<li class='navListItem'><a class='navItem' href='#" + name + "'><span class='code prettifyPHP'>" + text + "</span></a></li>")
       } else if ($id == "js") {
-        $temp = $("<li class='navListItem'><a class='navItem' href='#" + name + "'><code class=prettifyJS>" + text + "</code></a></li>")
+        $temp = $("<li class='navListItem'><a class='navItem' href='#" + name + "'><span class='code prettifyJS'>" + text + "</span></a></li>")
       } else if ($id == "css") {
-        $temp = $("<li class='navListItem'><a class='navItem' href='#" + name + "'><code class=prettifyCSS>" + text + "</code></a></li>")
+        $temp = $("<li class='navListItem'><a class='navItem' href='#" + name + "'><span class='code prettifyCSS'>" + text + "</span></a></li>")
       } else if ($id == "html") {
-        $temp = $("<li class='navListItem'><a class='navItem' href='#" + name + "'><code class=prettifyHTML>" + text + "</code></a></li>")
+        $temp = $("<li class='navListItem'><a class='navItem' href='#" + name + "'><span class='code prettifyHTML'>" + text + "</span></a></li>")
       } else if ($id == "sql") {
-        $temp = $("<li class='navListItem'><a class='navItem' href='#" + name + "'><code class=prettifySQL>" + text + "</code></a></li>")
+        $temp = $("<li class='navListItem'><a class='navItem' href='#" + name + "'><span class='code prettifySQL'>" + text + "</span></a></li>")
       } else if ($id == "result") {
-        $temp = $("<li class='navListItem'><a class='navItem' href='#" + name + "'><code class=prettifyResult>" + text + "</code></a></li>")
+        $temp = $("<li class='navListItem'><a class='navItem' href='#" + name + "'><span class='code prettifyResult'>" + text + "</span></a></li>")
       } else {
         $temp = $("<li class='navListItem'><a class='navItem' href='#" + name + "'>" + text + "</a></li>")
       }
@@ -92,7 +92,7 @@ function populateTOC() {
   for (var i = 0; i < sections.length; i++) {
     let name = sections[i].id;
     let text = ($(sections[i]).find("a")[0].innerText);
-    $temp = $("<li class='navListItem'><a class='navItem' href='#" + name + "'><code class='prettifyResult'>" + text + "</code></a></li>")
+    $temp = $("<li class='navListItem'><a class='navItem' href='#" + name + "'><span class='code prettifyResult'>" + text + "</span></a></li>")
     $("#tocDynamic").append($temp);
     $temp = $("<section id='TOC" + name + "'>")
     $("#tocDynamic").append($temp);
