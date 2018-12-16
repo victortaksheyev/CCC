@@ -238,3 +238,30 @@ $(window).scroll(function() {
 // ----------------------------------------------------------------------------------------------
 // End Scrolling
 // ----------------------------------------------------------------------------------------------
+
+// ----------------------------------------------------------------------------------------------
+// Start User functions
+// ----------------------------------------------------------------------------------------------
+function a(element) {
+  var $temp = $("<input>");
+  $("body").append($temp);
+  console.log($(element).text());
+  $temp.val($(element).text()).select();
+  document.execCommand("copy");
+  $temp.remove();
+}
+
+function copyOnClick(element_id) {
+  var aux = document.createElement("div");
+  aux.setAttribute("contentEditable", true);
+  aux.innerHTML = document.getElementById(element_id).innerHTML;
+  aux.setAttribute("onfocus", "document.execCommand('selectAll',false,null)");
+  document.getElementById(element_id).appendChild(aux);
+  aux.focus();
+  document.execCommand("copy");
+  document.getElementById(element_id).removeChild(aux);
+}
+
+// ----------------------------------------------------------------------------------------------
+// End User functions
+// ----------------------------------------------------------------------------------------------

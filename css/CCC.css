@@ -103,7 +103,12 @@ h6 {
 
 .button:hover {
   background: #222;
-  color: #fff
+  color: #fff;
+}
+
+.right-button {
+  display: inline;
+  float: right;
 }
 
 /* END BUTTONS */
@@ -321,6 +326,7 @@ h6 {
   padding: 2px;
   font-size: 150%;
   margin-bottom: 1em;
+  max-width: 900px;
 }
 
 .codeTab {
