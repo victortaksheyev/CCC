@@ -19,6 +19,6 @@
 // Mikian: GitHub Commit - b704fc9
 
 // Mikian: Start         - 12/15/2018 11:21PM
-// Mikian: End           -
-// Mikian: Comment       -
-// Mikian: GitHub Commit -
+// Mikian: End           - 12/16/2018 1:15AM
+// Mikian: Comment       - Started writing docs
+// Mikian: GitHub Commit - 9ccb0f1
