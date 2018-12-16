@@ -180,7 +180,7 @@ h6 {
   font-family: SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, Courier New, monospace;
   font-size: 85%;
   margin: 0;
-  padding: 3.2px 6.4px
+  padding: 3.2px 6.4px;
 }
 
 .codeB {
@@ -190,7 +190,7 @@ h6 {
   font-family: SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, Courier New, monospace;
   font-size: 85%;
   margin: 0;
-  padding: 3.2px 6.4px
+  padding: 3.2px 6.4px;
 }
 
 .textR {
@@ -323,12 +323,12 @@ h6 {
   margin-bottom: 1em;
 }
 
-.codeBoxBuffer {
-  overflow: auto;
-}
-
 .codeTab {
   font-size: 20px;
+}
+
+.tab-content {
+  max-width: 900px;
 }
 
 .resultBox {
@@ -358,6 +358,7 @@ h6 {
 /* Specify class=linenums on a pre to get line numbering */
 ol.linenums {
   margin-top: 0;
+  margin-left: 20px;
   margin-bottom: 0;
   color: #656d78;
 }
