@@ -26,4 +26,4 @@
 // Victor: Start         - 12/18/2018 12:15PM
 // Victor: End           - 12/16/2018 2:15PM
 // Victor: Comment       - Learning bootstrap by deving new portfolio site
-// Victor: GitHub Commit - 
+// Victor: GitHub Commit - 677d5a4
